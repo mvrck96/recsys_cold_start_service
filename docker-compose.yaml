@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: recomedndation_api
+    image: cs_rec_api
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 9696:8000
