@@ -12,4 +12,4 @@ RUN python -m pip install -r requirements.txt
 WORKDIR /app
 COPY . /app
 
-CMD gunicorn main:app --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+CMD gunicorn main:app --worker-class uvicorn.workers.UvicornWorker --bind ${API_HOST}:8000
