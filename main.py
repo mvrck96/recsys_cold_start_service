@@ -6,6 +6,9 @@ from dotenv import dotenv_values
 import sys
 sys.path.append("./src")
 
+from data_models import PredictData
+import clustering
+
 app = FastAPI()
 logger.info(f"API started")
 
@@ -21,6 +24,6 @@ def fit():
 
 
 @app.post("/als_predict")
-def predict():
+def predict(PredictData):
     return {"mode": "predict"}
 
